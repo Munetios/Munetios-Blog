@@ -1,4 +1,18 @@
 export const releases = [
+    {
+    slug: "munetios-weather-2-released",
+    title: "Munetios Weather 2 released",
+    date: "2026-11-24",
+    category: "release",
+    icon: "partly_cloudy_day",
+    summary: "The redesigned Munetios Weather brings automatic My Location, forecast charts, and the option to see every location in your time zone.",
+    body: `<p>Munetios Weather 2 is now available. The redesigned app brings hourly and 16-day forecasts, interactive charts, air quality, and animated skies together with sunrise, sunset, and moon information. In the United States and its territories, you can also see forecasts and alerts from the National Weather Service.</p>
+      <p>Allow browser location access to automatically add <strong>My Location</strong>. Weather refreshes that entry when you open the app and keeps any city you’ve already selected active. You can also search for a city, enter coordinates, or pick a place on the map.</p>
+      <p>Turn on <strong>Use my time zone</strong> in <strong>Settings</strong> to see forecasts, sunrise, and sunset for every saved location in your device’s time zone. Weather requests one day of earlier data and falls back to the latest available forecast in the same time zone if the earlier data can’t be loaded.</p>
+      <p>The release restores the original Munetios Weather icon and corrects regional translations, including Spanish and Portuguese. The app now uses a Munetios-hosted weather API with a limit of 60 requests per IP address in a rolling five-minute window.</p>
+      <p><a href="https://weather.munetios.com/">Open Munetios Weather</a></p>`,
+    tags: ["Munetios Weather", "Forecasts", "Time zones", "Release"],
+  },
   {
     slug: "deprecating-the-ganetios-branding",
     title: "Deprecating the Ganetios Branding",

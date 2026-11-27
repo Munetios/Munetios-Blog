@@ -1,5 +1,67 @@
 export const releases = [
   {
+    slug: "munetios-mail-web-release",
+    title: "Munetios Mail on the Web",
+    date: "2026-11-26",
+    category: "release",
+    icon: "mail",
+    summary: "Send and receive email, organize your inbox, and customize your mailbox in Munetios Mail.",
+    body: `<p>Munetios Mail now has a full web mailbox. Sign in with your Munetios Account to read and send email, search your messages, and organize them with folders and labels.</p>
+      <p>The web app uses Munetios UI v4. You can change the look of your mailbox in the customization studio, and use the HTML studio when you need more control over an email's layout.</p>
+      <p><a href="https://mail.munetios.com/">Open Munetios Mail</a></p>`,
+    tags: ["Munetios Mail","Email","Munetios UI v4"],
+  },
+  {
+    slug: "munetios-maps-returns",
+    title: "Munetios Maps Is Back",
+    date: "2026-11-26",
+    category: "release",
+    icon: "map",
+    summary: "The redesigned Maps is back, with live traffic, satellite imagery, and an encrypted Home address.",
+    body: `<p>Munetios Maps is back on its dedicated website. Explore in satellite view and turn on the traffic layer to check current conditions along your route.</p>
+      <p>Set your Home address from the Home panel or directly on the map. Once it's saved, choose <strong>Home</strong> to get directions from your current location. When you sync your Home address, it is protected with end-to-end encryption.</p>
+      <p>Maps now offers 17 language and regional options, with language names displayed in their native spelling.</p>
+      <p><a href="https://maps.munetios.com/">Open Munetios Maps</a></p>`,
+    tags: ["Munetios Maps","Directions","Localization"],
+  },
+  {
+    slug: "workspaces-notes-tasks-and-more",
+    title: "Separate Workspaces Across Munetios Apps",
+    date: "2026-11-26",
+    category: "release",
+    icon: "workspaces",
+    summary: "Switch workspaces from the account menu, and open SupaNotes and Tasks on their own websites.",
+    body: `<p>Calendar, Photos, Tasks, SupaNotes, Maps, and Meals now keep data separate by workspace. Your existing Personal data stays in Personal. Other workspaces get their own local data and end-to-end encrypted sync.</p>
+      <p>Choose a workspace from the account menu to switch in the app you're using. Other open tabs follow the switch.</p>
+      <p>SupaNotes and Tasks now have dedicated websites with shared Munetios sign-in.</p>
+      <p><a href="https://notes.munetios.com/">Open Munetios SupaNotes</a> &middot; <a href="https://tasks.munetios.com/">Open Munetios Tasks</a></p>`,
+    tags: ["Workspaces","Sync","SupaNotes","Tasks"],
+  },
+  {
+    slug: "calendar-meals-and-event-editor",
+    title: "Meal Planning and More Flexible Events in Calendar",
+    date: "2026-11-26",
+    category: "release",
+    icon: "calendar_month",
+    summary: "Use the redesigned Meals planner, start your week on any day, and schedule events to the minute.",
+    body: `<p>The redesigned Munetios Meals is now available inside Calendar. Open Meals from its new address to plan your meals alongside your schedule.</p>
+      <p>Calendar also has a cleaner event editor. You can enter an event time to the minute and choose any day as the start of your week.</p>
+      <p><a href="https://calendar.munetios.com/calendar/meals/">Open Munetios Meals</a> &middot; <a href="https://calendar.munetios.com/">Open Munetios Calendar</a></p>`,
+    tags: ["Calendar","Meals","Scheduling"],
+  },
+  {
+    slug: "omniwrite-v2-photos-and-picture-in-picture",
+    title: "What's New in Munetios OmniWrite v2",
+    date: "2026-11-24",
+    category: "release",
+    icon: "edit_document",
+    summary: "Insert images from Munetios Photos, watch videos in picture-in-picture, and find release notes in Help.",
+    body: `<p>OmniWrite v2 lets you insert images from your Munetios Photos library directly into your work. Open the image picker to choose a photo you've already saved.</p>
+      <p>Videos now support native picture-in-picture in compatible browsers, so you can keep watching in a small floating window while you work. OmniWrite Help has also been updated with guidance and release notes for versions 2.0.0 and 2.0.1.</p>
+      <p><a href="https://write.munetios.com/">Open Munetios OmniWrite</a></p>`,
+    tags: ["OmniWrite","Munetios Photos","Picture-in-picture"],
+  },
+  {
     slug: "munetios-weather-2-released",
     title: "Munetios Weather 2 released",
     date: "2026-11-24",

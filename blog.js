@@ -1,5 +1,5 @@
 import { archive } from "./blog-archive.js";
-import { releases } from "./blog-releases.js?v=weather-2";
+import { releases } from "./blog-releases.js?v=2026-11-26";
 import { matchLocale, messages } from "./blog-i18n.js";
 
 const siteName = "Munetios Blog";

@@ -1,7 +1,8 @@
 import { archive } from "./blog-archive.js";
-import { releases } from "./blog-releases.js?v=2026-11-26";
+import { releases } from "./blog-releases.js?v=2026-11-26-links";
 import { matchLocale, messages } from "./blog-i18n.js";
 
+const buildVersion = new URL(import.meta.url).searchParams.get("v");
 const siteName = "Munetios Blog";
 const languageKey = "munetios-blog-language";
 const ui = window.MunetiosUI;
@@ -150,7 +151,10 @@ function article(post) {
 }
 
 function openShare(post) {
-  const url = new URL(postHref(post), location.href).href;
+  const postUrl = new URL(postHref(post), location.href);
+  postUrl.searchParams.delete("refresh");
+  if (buildVersion) postUrl.searchParams.set("v", buildVersion);
+  const url = postUrl.href;
   shareUrl.value = url;
   copyStatus.textContent = "";
   document.getElementById("share-facebook").href = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(url);
@@ -175,6 +179,12 @@ function route(moveFocus = false) {
   } else if (postLinks.has(slug)) {
     article(postLinks.get(slug));
   } else if (path && path !== "/" && path !== "blog-content") {
+    const pageUrl = new URL(location.href);
+    if (/^\/post\/[a-z0-9-]+$/i.test(path) && !pageUrl.searchParams.has("v") && !pageUrl.searchParams.has("refresh")) {
+      pageUrl.searchParams.set("refresh", Date.now());
+      location.replace(pageUrl);
+      return;
+    }
     main.append(el("h1", "mu-h-display blog-page-title", t("notFound")), link(t("back"), "#/", "arrow_back"));
   } else {
     home();

@@ -1,4 +1,7 @@
 const english = {
+  sortPosts: "Sort posts",
+  newestFirst: "Newest first",
+  oldestFirst: "Oldest first",
   skip: "Skip to content",
   navigation: "Blog navigation",
   footerNavigation: "Munetios links",
@@ -32,6 +35,9 @@ const english = {
 };
 
 const spanish = {
+  sortPosts: "Ordenar publicaciones",
+  newestFirst: "Más recientes primero",
+  oldestFirst: "Más antiguas primero",
   skip: "Ir al contenido",
   navigation: "Navegación del blog",
   footerNavigation: "Enlaces de Munetios",
@@ -65,6 +71,9 @@ const spanish = {
 };
 
 const french = {
+  sortPosts: "Trier les publications",
+  newestFirst: "Les plus récentes d’abord",
+  oldestFirst: "Les plus anciennes d’abord",
   skip: "Aller au contenu",
   navigation: "Navigation du blog",
   footerNavigation: "Liens Munetios",
@@ -98,6 +107,9 @@ const french = {
 };
 
 const portuguese = {
+  sortPosts: "Ordenar publicações",
+  newestFirst: "Mais recentes primeiro",
+  oldestFirst: "Mais antigas primeiro",
   skip: "Pular para o conteúdo",
   navigation: "Navegação do blog",
   footerNavigation: "Links da Munetios",

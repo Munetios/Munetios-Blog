@@ -1,6 +1,6 @@
 import { archive } from "./blog-archive.js";
-import { releases } from "./blog-releases.js?v=2026-11-26-links";
-import { matchLocale, messages } from "./blog-i18n.js";
+import { releases } from "./blog-releases.js?v=2026-11-26-redesigns";
+import { matchLocale, messages } from "./blog-i18n.js?v=2026-11-26-redesigns";
 
 const buildVersion = new URL(import.meta.url).searchParams.get("v");
 const siteName = "Munetios Blog";
@@ -37,6 +37,7 @@ for (const post of posts) {
   }
 }
 
+let sortOldest = false;
 let storedLanguage;
 try { storedLanguage = localStorage.getItem(languageKey); } catch {}
 let locale = matchLocale(storedLanguage || navigator.language);
@@ -123,9 +124,24 @@ function listing(query) {
   const heading = t(searching ? "searchResults" : "all");
   const terms = normalize(query || "").split(/\s+/).filter(Boolean);
   const items = searching ? posts.filter((post) => terms.length && terms.every((word) => post.searchable.includes(word))) : posts;
-  main.append(el("h1", "mu-h-display blog-page-title", heading));
+  const titleRow = el("div", "blog-section-heading");
+  const sort = el("select", "mu-select", undefined, { "aria-label": t("sortPosts") });
+  sort.append(el("option", "", t("newestFirst"), { value: "newest" }), el("option", "", t("oldestFirst"), { value: "oldest" }));
+  sort.value = sortOldest ? "oldest" : "newest";
+  const results = el("div");
+  const renderResults = () => {
+    const ordered = sortOldest ? [...items].sort((a, b) => a.date.localeCompare(b.date)) : items;
+    results.replaceChildren(ordered.length ? postGrid(ordered) : el("p", "mu-muted", t("noResults")));
+  };
+  sort.addEventListener("change", () => {
+    sortOldest = sort.value === "oldest";
+    renderResults();
+  });
+  titleRow.append(el("h1", "mu-h-display blog-page-title", heading), sort);
+  main.append(titleRow);
   if (searching && query) main.append(el("p", "mu-muted", query));
-  main.append(items.length ? postGrid(items) : el("p", "mu-muted", t("noResults")));
+  renderResults();
+  main.append(results);
   document.title = `${heading} | ${siteName}`;
 }
 
